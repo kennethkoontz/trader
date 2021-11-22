@@ -4,17 +4,45 @@ import Modal from "react-modal";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import useTrader from "../components/useTrader";
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.min.css";
 
 export default function Home() {
-  const [amount, setAmount] = useState();
+  const { assets, selected, setSelected, amount, setAmount } = useTrader();
+
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const { assets } = useTrader();
 
   const closeModal = () => {
     setModalIsOpen(false);
   };
 
   const afterOpenModal = () => {};
+
+  const selectAsset = (asset) => {
+    setSelected(asset);
+    closeModal();
+  };
+
+  const buy = () => {
+    const resolveAfter3Sec = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+        setAmount();
+      }, 2000);
+    });
+    toast.promise(
+      resolveAfter3Sec,
+      {
+        pending: "Purchasing...",
+        success: `Purchased $${amount} ${selected.name}! 🎉`,
+      },
+      {
+        theme: "dark",
+        position: "bottom-right",
+      }
+    );
+  };
 
   const customStyles = {
     overlay: {
@@ -51,6 +79,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <ToastContainer />
         <div className={styles.trader}>
           <div className={styles.heading}>Buy</div>
           <div className={styles.selector}>
@@ -59,7 +88,13 @@ export default function Home() {
                 className={styles.asset}
                 onClick={() => setModalIsOpen(true)}
               >
-                <span className={styles.assetText}>ETH</span>
+                <img
+                  src={selected.imageURL}
+                  alt={selected.name}
+                  height={20}
+                  width={20}
+                />
+                <span className={styles.assetText}>{selected.short}</span>
                 <span className={styles.caret}>
                   <svg
                     width="12"
@@ -95,10 +130,14 @@ export default function Home() {
                 </div>
                 <div className={styles.assetList}>
                   {assets.map((o) => (
-                    <div key={o.short} className={styles.assetClass}>
+                    <div
+                      key={o.short}
+                      className={styles.assetClass}
+                      onClick={() => selectAsset(o)}
+                    >
                       <Image
                         src={o.imageURL}
-                        alt={styles.name}
+                        alt={o.name}
                         height={40}
                         width={40}
                       />
@@ -118,7 +157,9 @@ export default function Home() {
                 placeholder="0"
               />
             </div>
-            <button className={styles.buy}>Buy</button>
+            <button className={styles.buy} onClick={buy} disabled={amount <= 0}>
+              Buy
+            </button>
           </div>
         </div>
       </main>

@@ -41,6 +41,10 @@
     cursor: pointer;
 }
 
+.assetImage {
+    width: 20px !important;
+}
+
 .heading {
     margin-top: 18px;
     margin-left: 18px;
@@ -66,6 +70,12 @@
     cursor: pointer;
     background-color: rgb(33, 114, 229);
     margin-top: 24px;
+    transition: opacity .25s;
+    opacity: 1;
+}
+
+.buy:disabled {
+    opacity: .25;
 }
 
 .assetWrapper {

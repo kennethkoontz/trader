@@ -1,5 +1,9 @@
-function useTrader(props) {
-  return { assets };
+import { useState } from "react";
+
+function useTrader() {
+  const [selected, setSelected] = useState(assets[0]);
+  const [amount, setAmount] = useState();
+  return { assets, selected, setSelected, amount, setAmount };
 }
 
 const assets = [
