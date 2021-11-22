@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import Image from "next/image";
 import Modal from "react-modal";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
@@ -96,7 +96,12 @@ export default function Home() {
                 <div className={styles.assetList}>
                   {assets.map((o) => (
                     <div key={o.short} className={styles.assetClass}>
-                      <img src={o.imageURL} />
+                      <Image
+                        src={o.imageURL}
+                        alt={styles.name}
+                        height={40}
+                        width={40}
+                      />
                       <div className={styles.assetName}>
                         <div>{o.short}</div>
                         <div>{o.name}</div>
