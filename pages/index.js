@@ -95,7 +95,7 @@ export default function Home() {
                 </div>
                 <div className={styles.assetList}>
                   {assets.map((o) => (
-                    <div className={styles.assetClass}>
+                    <div key={o.short} className={styles.assetClass}>
                       <img src={o.imageURL} />
                       <div className={styles.assetName}>
                         <div>{o.short}</div>
