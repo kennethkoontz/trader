@@ -1,0 +1,154 @@
+.container {
+    padding: 0 2rem;
+    background-color: rgb(33, 36, 41);
+    font-size: 18px;
+}
+
+.main {
+    min-height: 100vh;
+    padding: 4rem 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.selector {
+    display: flex;
+    flex-flow: column nowrap;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 1rem 1rem 0.75rem;
+}
+
+.asset {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 500;
+    background-color: rgb(25, 27, 31);
+    color: rgb(255, 255, 255);
+    border-radius: 16px;
+    outline: none;
+    user-select: none;
+    border: none;
+    height: 2.4rem;
+    padding: 0 14px;
+    cursor: pointer;
+}
+
+.heading {
+    margin-top: 18px;
+    margin-left: 18px;
+}
+
+.assetText {
+    margin: 0 12px;
+}
+
+.buy {
+    padding: 16px;
+    width: 100%;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 20px;
+    outline: none;
+    border: 1px solid transparent;
+    font-size: 18px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: rgb(33, 114, 229);
+    margin-top: 24px;
+}
+
+.assetWrapper {
+    border-radius: 20px;
+    border: 1px solid rgb(44, 47, 54);
+    background-color: rgb(33, 36, 41);
+    width: 100%;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modalBody {
+    padding: 0 16px;
+}
+
+.caret {
+    display: flex;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.close {
+    background-color: rgb(33, 36, 41);
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.amount {
+    color: white;
+    font-size: 24px;
+    text-align: right;
+    outline: none;
+    border: none;
+    background-color: rgb(33, 36, 41);
+    width: 100%;
+}
+
+.assetSelector {
+    background: none;
+    outline: none;
+    border: 1px solid rgb(64, 68, 79);
+    border-radius: 20px;
+    height: 55px;
+    font-size: 18px;
+    color: white;
+    padding: 16px;
+    width: 100%;
+}
+.assetSelector:focus {
+    border: 1px solid rgb(33, 114, 229);
+    outline: none;
+}
+
+.trader {
+    background-color: rgb(25, 27, 31);
+    width: 100%;
+    max-width: 480px;
+    border-radius: 24px;
+}
+
+.assetList {
+    border-top: 1px solid rgb(64, 68, 79);
+}
+
+.assetClass {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    cursor: pointer;
+}
+
+.assetClass:hover {
+    background-color: rgb(44, 47, 54);
+}
+
+.assetName {
+    flex: 1;
+    padding-left: 12px;
+}
