@@ -28,7 +28,7 @@ export default function Home() {
     const resolveAfter3Sec = new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-        setAmount();
+        setAmount("");
       }, 2000);
     });
     toast.promise(
