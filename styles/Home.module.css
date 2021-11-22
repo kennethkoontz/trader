@@ -74,6 +74,12 @@
     opacity: 1;
 }
 
+.title > h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 48px;
+}
+
+
 .buy:disabled {
     opacity: .25;
 }
