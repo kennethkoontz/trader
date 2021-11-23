@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function useTrader() {
   const [selected, setSelected] = useState(assets[0]);
-  const [amount, setAmount] = useState();
+  const [amount, setAmount] = useState("");
   return { assets, selected, setSelected, amount, setAmount };
 }
 

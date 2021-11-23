@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Image from "next/image";
 import Modal from "react-modal";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
